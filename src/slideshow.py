@@ -7,7 +7,6 @@ with open("story.json", 'r') as file:
     image_texts = json.load(file)
 
 image_paths: List[str] = list(image_texts.keys()) 
-# print(image_texts)
 
 root = tk.Tk()
 root.title("Image Slideshow with Text")
@@ -40,7 +39,7 @@ def update_image() -> None:
     idx = (idx + 1) % len(image_texts)
     root.after(5000, update_image)  
 
-def toggle_pause() -> None:
+def toggle_pause() -> None: # Commands for controlling the images
     global paused
     paused = not paused
     if not paused:
@@ -56,7 +55,7 @@ def prev_image() -> None:
     idx = (idx - 1) % len(image_texts)
     update_image()
 
-btn_frame = tk.Frame(root)
+btn_frame = tk.Frame(root) # Buttons for controlling the images through commands
 btn_frame.pack()
 
 btn_prev = tk.Button(btn_frame, text="<< Previous", command=prev_image)

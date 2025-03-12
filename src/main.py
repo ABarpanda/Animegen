@@ -1,12 +1,11 @@
 import timeit
+start = timeit.default_timer() # Execution time begins
 import json
 import os
 import scene_split
 import text_to_img
 import shutil
 import slideshow
-
-start = timeit.default_timer() # Execution time begins
 
 with open("story.txt", "r", encoding="utf-8") as f:
     story = f.read()

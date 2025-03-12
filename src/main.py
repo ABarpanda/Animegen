@@ -5,7 +5,6 @@ import os
 import scene_split
 import text_to_img
 import shutil
-import slideshow
 
 with open("story.txt", "r", encoding="utf-8") as f:
     story = f.read()
@@ -36,3 +35,5 @@ with open("story.json", "w") as f:
 
 end = timeit.default_timer() # Execution time ends
 print(f"Time taken: {end-start} seconds") # Total execution time
+
+import slideshow # Slideshow is played

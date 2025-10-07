@@ -9,7 +9,7 @@ async def send_request(session: aiohttp.ClientSession, url: str, data: Dict[str,
 async def periodic_requests(url: str, data: Dict[str, Any], interval: int, count: int) -> None:
     async with aiohttp.ClientSession() as session:
         for _ in range(count):
-            asyncio.create_task(send_request(session, url, data))  # Fire and forget
+            asyncio.create_task(send_request(session, url, data))
             await asyncio.sleep(interval)  # Wait before sending the next request
 
 url = "https://api.example.com/endpoint"
